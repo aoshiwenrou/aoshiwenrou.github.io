@@ -4,19 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Jcking&#39;s Blog</title>
+    <title>mac下的Hexo-Github的Blog搭建 | Jcking&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jcking">
     
 
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Jcking&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="本文引用自Dark Angel的博客，原文链接-分享是种美德  安装：一、安装HomebrewMac上已经安装了ruby环境，只需要输入 1ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 二、安装node.js1sudo brew install">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac下的Hexo-Github的Blog搭建">
+<meta property="og:url" content="http://yoursite.com/2017/05/15/build blog with hexo and github in maxOS.html">
 <meta property="og:site_name" content="Jcking&#39;s Blog">
+<meta property="og:description" content="本文引用自Dark Angel的博客，原文链接-分享是种美德  安装：一、安装HomebrewMac上已经安装了ruby环境，只需要输入 1ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 二、安装node.js1sudo brew install">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/65e4f1e6jw1f72qarsjd9j20va0aydh0.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/65e4f1e6jw1f72qbhppqfj214a0sqq6q.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/65e4f1e6jw1f72qblgcswj21kw01qglt.jpg">
+<meta property="og:updated_time" content="2017-05-15T11:32:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jcking&#39;s Blog">
+<meta name="twitter:title" content="mac下的Hexo-Github的Blog搭建">
+<meta name="twitter:description" content="本文引用自Dark Angel的博客，原文链接-分享是种美德  安装：一、安装HomebrewMac上已经安装了ruby环境，只需要输入 1ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 二、安装node.js1sudo brew install">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/65e4f1e6jw1f72qarsjd9j20va0aydh0.jpg">
 
     
     <link rel="alternative" href="/atom.xml" title="Jcking&#39;s Blog" type="application/atom+xml">
@@ -70,61 +78,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/05/15/Learn Data Structure and Algorithm (0) - Math.html" title="从零开始体验数据结构与算法之美（1）-基础数学知识" itemprop="url">从零开始体验数据结构与算法之美（1）-基础数学知识</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jcking" target="_blank" itemprop="author">Jcking</a>
-		
-  <p class="article-time">
-    <time datetime="2017-05-15T11:19:46.000Z" itemprop="datePublished"> Published 2017-05-15</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2017/05/15/build blog with hexo and github in maxOS.html" title="mac下的Hexo-Github的Blog搭建" itemprop="url">mac下的Hexo-Github的Blog搭建</a>
@@ -138,9 +95,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <blockquote>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装："><span class="toc-number">1.</span> <span class="toc-text">安装：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、安装Homebrew"><span class="toc-number">1.1.</span> <span class="toc-text">一、安装Homebrew</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、安装node-js"><span class="toc-number">1.2.</span> <span class="toc-text">二、安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、安装Hexo"><span class="toc-number">1.3.</span> <span class="toc-text">三、安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、创建Blog-Repository"><span class="toc-number">1.4.</span> <span class="toc-text">四、创建Blog Repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、购买域名"><span class="toc-number">1.5.</span> <span class="toc-text">五、购买域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、Deploy"><span class="toc-number">1.6.</span> <span class="toc-text">六、Deploy</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化"><span class="toc-number">2.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、访问速度"><span class="toc-number">2.1.</span> <span class="toc-text">一、访问速度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、RSS订阅"><span class="toc-number">2.2.</span> <span class="toc-text">二、RSS订阅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、搜索支持"><span class="toc-number">2.3.</span> <span class="toc-text">三、搜索支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、评论功能"><span class="toc-number">2.4.</span> <span class="toc-text">四、评论功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、分享功能"><span class="toc-number">2.5.</span> <span class="toc-text">五、分享功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、个人信息完善"><span class="toc-number">2.6.</span> <span class="toc-text">六、个人信息完善</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写文章"><span class="toc-number">3.</span> <span class="toc-text">写文章</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写在最后"><span class="toc-number">4.</span> <span class="toc-text">写在最后</span></a></li></ol>
+		
+		</div>
+		
+		<blockquote>
 <p>本文引用自<em>Dark Angel</em>的博客，<a href="http://blog.darkangel7.com/2016/08/19/Hexo+Github的Blog搭建/" target="_blank" rel="external">原文链接-分享是种美德</a></p>
 </blockquote>
 <h1 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h1><h2 id="一、安装Homebrew"><a href="#一、安装Homebrew" class="headerlink" title="一、安装Homebrew"></a>一、安装Homebrew</h2><p>Mac上已经安装了ruby环境，只需要输入</p>
@@ -220,14 +184,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
 <p>所有的文章都是放在<code>Blog/source/_posts/</code>目录下的，可以随时编辑修改。</p>
 <h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>还有一些其他的修改，这里就不一一提了，等待你慢慢发现。现在快开始写作吧~~</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -235,82 +194,51 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2017/05/15/build blog with hexo and github in maxOS.html" data-title="mac下的Hexo-Github的Blog搭建 | Jcking&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/05/15/hello-world.html" title="Hello World" itemprop="url">Hello World</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Jcking" target="_blank" itemprop="author">Jcking</a>
-		
-  <p class="article-time">
-    <time datetime="2017-05-15T08:40:52.000Z" itemprop="datePublished"> Published 2017-05-15</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/05/15/Learn Data Structure and Algorithm (0) - Math.html" title="从零开始体验数据结构与算法之美（1）-基础数学知识">
+  <strong>上一篇：</strong><br/>
+  <span>
+  从零开始体验数据结构与算法之美（1）-基础数学知识</span>
+</a>
 </div>
 
-</footer>
 
-
-    </article>
-
-
-
-
-
-
-
+<div class="next">
+<a href="/2017/05/15/hello-world.html"  title="Hello World">
+ <strong>下一篇：</strong><br/> 
+ <span>Hello World
+</span>
+</a>
 </div>
+
+</nav>
+
+	
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装："><span class="toc-number">1.</span> <span class="toc-text">安装：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、安装Homebrew"><span class="toc-number">1.1.</span> <span class="toc-text">一、安装Homebrew</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、安装node-js"><span class="toc-number">1.2.</span> <span class="toc-text">二、安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、安装Hexo"><span class="toc-number">1.3.</span> <span class="toc-text">三、安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、创建Blog-Repository"><span class="toc-number">1.4.</span> <span class="toc-text">四、创建Blog Repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、购买域名"><span class="toc-number">1.5.</span> <span class="toc-text">五、购买域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、Deploy"><span class="toc-number">1.6.</span> <span class="toc-text">六、Deploy</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化"><span class="toc-number">2.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、访问速度"><span class="toc-number">2.1.</span> <span class="toc-text">一、访问速度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、RSS订阅"><span class="toc-number">2.2.</span> <span class="toc-text">二、RSS订阅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、搜索支持"><span class="toc-number">2.3.</span> <span class="toc-text">三、搜索支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、评论功能"><span class="toc-number">2.4.</span> <span class="toc-text">四、评论功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、分享功能"><span class="toc-number">2.5.</span> <span class="toc-text">五、分享功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、个人信息完善"><span class="toc-number">2.6.</span> <span class="toc-text">六、个人信息完善</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写文章"><span class="toc-number">3.</span> <span class="toc-text">写文章</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写在最后"><span class="toc-number">4.</span> <span class="toc-text">写在最后</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -441,12 +369,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -517,4 +522,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>

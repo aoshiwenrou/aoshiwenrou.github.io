@@ -353,6 +353,17 @@
 <p>hexo d   ：发布</p>
 <p>一般可以组合使用hexo g -d，部署并发布，或者hexo s -d。不过一般还是推荐先g，然后s，进行本地预览，没有问题再进行d</p>
 </blockquote>
+<h1 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h1><p>在Blog目录下，创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new 文章题目</div></pre></td></tr></table></figure>
+<p>然后用Markdown编写，写好后save。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
+<p>生成，然后在本地localhost:4000预览一下，如果没有问题，就可以发布了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>所有的文章都是放在<code>Blog/source/_posts/</code>目录下的，可以随时编辑修改。</p>
+<blockquote>
+<p>小技巧：hexo new 的时候，推荐使用英文名，例如我这篇文章就叫<code>build blog site with hexo and github in maxOS</code>（英文很水，轻点吐槽），这样你的文章链接就不会出现一堆中文转义。然后在你文章的顶部进行配置，设置title为中文（默认会有这两行，并且title为文件名，我这里默认就是<code>build blog site with hexo and github in maxOS</code>），这样在你的blog列表中，显示的就是你的中文title，就像你现在在文章中看到的，我的标题就是<code>mac下基于Hexo-Github的Blog搭建</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; title: mac下基于Hexo-Github的Blog搭建</div><div class="line">&gt; date: 2017-05-16 10:16:18</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
 <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="一、访问速度"><a href="#一、访问速度" class="headerlink" title="一、访问速度"></a>一、访问速度</h2><p>由于Google被墙，大部分主题中引用的jquery都会因为超时（可以Blog目录下搜索google），而造成页面访问很慢，这里需要将jquery改为百度的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;//apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
 <h2 id="二、RSS订阅"><a href="#二、RSS订阅" class="headerlink" title="二、RSS订阅"></a>二、RSS订阅</h2><p>输入命令</p>
@@ -388,19 +399,8 @@
 <p>然后在<code>_config.yml</code>配置文件中设置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: light</div></pre></td></tr></table></figure>
 <p>关于主题的优化，一般在<code>themes/yourtheme/_config.yml</code>中配置。</p>
-<h1 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h1><p>在Blog目录下，创建</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new 文章题目</div></pre></td></tr></table></figure>
-<p>然后用Markdown编写，写好后save。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
-<p>生成，然后在本地localhost:4000预览一下，如果没有问题，就可以发布了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
-<p>所有的文章都是放在<code>Blog/source/_posts/</code>目录下的，可以随时编辑修改。</p>
-<blockquote>
-<p>小技巧：hexo new 的时候，推荐使用英文名，例如我这篇文章就叫<code>build blog site with hexo and github in maxOS</code>（英文很水，轻点吐槽），这样你的文章链接就不会出现一堆中文转义。然后在你文章的顶部进行配置，设置title为中文（默认会有这两行，并且title为文件名，我这里默认就是<code>build blog site with hexo and github in maxOS</code>），这样在你的blog列表中，显示的就是你的中文title，就像你现在在文章中看到的，我的标题就是<code>mac下基于Hexo-Github的Blog搭建</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; title: mac下基于Hexo-Github的Blog搭建</div><div class="line">&gt; date: 2017-05-16 10:16:18</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
 <h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><blockquote>
-<p>本文参考<a href="http://blog.darkangel7.com/2016/08/19/Hexo+Github的Blog搭建/" target="_blank" rel="external"><em>Dark Angel</em>的博客</a></p>
+<p>本文参考<a href="http://blog.darkangel7.com/2016/08/19/Hexo+Github的Blog搭建/" target="_blank" rel="external"><em>Dark Angel</em>的博客</a>，他的文章还提到了付费购买域名，及域名与github绑定的内容，有需要的可以参考</p>
 </blockquote>
 
           

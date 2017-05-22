@@ -251,6 +251,139 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/Kotlin(2)-null safety.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jcking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jcking's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/22/Kotlin(2)-null safety.html" itemprop="url">Kotlin学习笔记（2）- 空指针</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-22T01:16:23+08:00">
+                2017-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>kotlin中很大的一个特点就是<code>null</code>安全，在java中需要到处处理的空判断带来的代码层次深，以及没处理好空判断带来的空指针异常<code>NullPointerExecption</code>，在这里能得到很好的解决。kotlin通过<code>?</code>将是否允许为空分割开来，比如<code>str:String</code>为不能空，加上<code>?</code>后的<code>str:String?</code>为允许空，通过这种方式，将本是不能确定的变量人为的加入了限制条件。而不符合条件的输入，则会在IDE上显示编译错误而无法执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var value1 : String = &quot;abc&quot;</div><div class="line">value = null        // 编译不错误</div><div class="line"></div><div class="line">var value2 : String? = &quot;abc&quot;</div><div class="line">value2 = null       // 编译能通过</div></pre></td></tr></table></figure>
+<p>在对变量进行操作时，如果变量是可能为空的，那么将不能直接调用，因为编译器不知道你的变量是否为空，所以编译器就要求你一定要对变量进行判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str : String? = null</div><div class="line">str.length    // 编译不错误</div><div class="line">str?.length   // 编译能通过</div></pre></td></tr></table></figure>
+<p>那么问题来了，我们知道在java中<code>String.length</code>返回的是int，上面的<code>str?.length</code>既然编译通过了，那么它返回了什么？我们可以这么写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var result = str?.length</div></pre></td></tr></table></figure>
+<p>这么写编译器是能通过的，那么<code>result</code>的类型是什么呢？在kotlin中，编译器会自动根据结果判断变量的类型，翻译成普通代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if(str == null)</div><div class="line">	result = null;			// 这里result为一个引用类型</div><div class="line">else</div><div class="line">	result = str.length;	// 这里result为Int</div></pre></td></tr></table></figure>
+<p>那么如果我们需要的就是一个<code>Int</code>的结果（事实上大部分情况都是如此），那又该怎么办呢？在kotlin中除了<code>?</code>表示可为空以外，还有一个新的符号：双感叹号<code>!!</code>，表示一定不能为空。所以上面的例子，如果要对<code>result</code>进行操作，可以这么写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str : String? = null</div><div class="line">var result : Int = str!!.length</div></pre></td></tr></table></figure>
+<p>这样的话，就能保证result的数据类型，但是这样还有一个问题，那就是<code>str</code>的定义是可为空的，上面的代码中，<code>str</code>就是空，这时候下面的操作虽然不会报编译异常，但是运行时就会见到我们熟悉的空指针异常NullPointerExectpion，这显然不是我们希望见到的，也不是kotlin愿意见到的。java中的三元操作符大家应该都很熟悉了，kotlin中也有类似的，它很好的解决了刚刚说到的问题。在kotlin中，三元操作符是<code>?:</code>，写起来也比java要方便一些。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str : String? = null</div><div class="line">var result = str?.length ?: -1</div><div class="line">//等价于</div><div class="line">var result : Int = if(str != null) str.length else -1</div></pre></td></tr></table></figure>
+<p>小结：</p>
+<ol>
+<li>kotlin的null安全主要通过<code>?</code>和<code>!!</code>人为的将变量做了限制</li>
+<li>对可空的变量的操作，也要做空判断str?.length</li>
+<li>可以直接定义变量var result，kotlin会根据后面的赋值动态的判断result的类型</li>
+<li>合理的利用三元操作符<code>?:</code>，对result的数据类型进行控制，并避免空指针异常的问题</li>
+</ol>
+<p>写在最后：</p>
+<p>今天陪媳妇出去逛，献出了自己的第一次——被马蜂蜇。夏天到了，朋友们出去玩，尤其是公园之类绿植茂盛的地方，一定要做好防蚊虫工作，虽然城市里不会出现太有毒性的蚊虫，但是谁也不喜欢被打扰到出去游玩的心情吧~</p>
+<p>谨以最后几句纪念一下我此刻肿起的胳膊，晚安，Kotlin！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/21/Kotlin(1)-Environment.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -850,7 +983,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

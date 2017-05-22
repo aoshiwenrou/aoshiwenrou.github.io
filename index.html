@@ -251,6 +251,140 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/21/Kotlin(1)-Environment.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jcking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jcking's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/21/Kotlin(1)-Environment.html" itemprop="url">Kotlin学习笔记（1）- 环境配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T00:27:52+08:00">
+                2017-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前两天谷歌宣布了使用Kotlin为官方语言，再加上kotlin本身的优点，那学习并使用kotlin就仿佛成了一种必然。今天和项目里的小伙伴稍微讨论了一下，便决定大家一起学习，并根据个人掌握情况，在合适的时候开始应用到项目上。今天是我开始学习kotlin的第一天，主要是配置环境，记录一下。</p>
+<blockquote>
+<p>kotlin官方中文网站：<a href="https://www.kotlincn.net/docs/reference/android-overview.html" target="_blank" rel="external">https://www.kotlincn.net/docs/reference/android-overview.html</a> </p>
+<p>Android Stuido 3.0以上已经开始集成了kotlin，可以直接使用；而3.0以下需要插件支持，其实使用起来也很方便。</p>
+</blockquote>
+<h1 id="一、安装kotlin支持（AS3-0及以上可跳过）"><a href="#一、安装kotlin支持（AS3-0及以上可跳过）" class="headerlink" title="一、安装kotlin支持（AS3.0及以上可跳过）"></a>一、安装kotlin支持（AS3.0及以上可跳过）</h1><p>打开<code>Android Studio</code>的设置，找到<code>Plugins</code>，在里面搜索<code>kotlin</code>，点击安装，安装完成之后会提示你重新启动AS。这里可能需要翻墙，最少我最初是下载失败的，翻墙之后下载成功。<em>官网以及很多文章都推荐下载<code>anko</code>插件，个人这里先不推荐，具体原因下面会说到。</em></p>
+<h1 id="二、添加kotlin依赖"><a href="#二、添加kotlin依赖" class="headerlink" title="二、添加kotlin依赖"></a>二、添加kotlin依赖</h1><p>在安装完<code>kotlin</code>支持后，现在在你的<code>module</code>下右键，会发现有两个新的kotlin选项，说明安装成功。<br><img src="http://upload-images.jianshu.io/upload_images/292429-9c9ece23b2838777.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="new里有新的kotlin选项.png"><br>点击<code>Kotlin Activity</code>(另一个kotlin选项也可以)，创建一个<code>kotlin</code>文件，然后右上角会提示你<code>配置kotlin</code>，点击<code>Configure</code>，然后点击<code>Android with Gradle</code><br><img src="http://upload-images.jianshu.io/upload_images/292429-946471248c0f2488.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置kotlin.png"><br><img src="http://upload-images.jianshu.io/upload_images/292429-a2743478a111f7e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置kotlin2.png"><br>kotlin会自动为你添加依赖，具体的修改为</p>
+<ol>
+<li>在项目的<code>build.gradle</code>文件中，增加了</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</div></pre></td></tr></table></figure>
+<p>我这里的kotlin_version为1.1.2-4，目前的最新版</p>
+<p>2.在<code>module</code>的<code>build.gradle</code>文件中，增加了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;kotlin-android&apos;</div><div class="line">compile &quot;org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version&quot;</div></pre></td></tr></table></figure>
+<h1 id="三、安装android扩展"><a href="#三、安装android扩展" class="headerlink" title="三、安装android扩展"></a>三、安装android扩展</h1><p>官网还推荐了一个插件：<code>kotlin-android-extensions</code>，能大大减少，甚至消灭<code>findViewById</code>，直接映射xml的组件，具体看<a href="https://www.kotlincn.net/docs/tutorials/android-plugin.html" target="_blank" rel="external">官网的说明</a></p>
+<p>到这里，环境配置基本就完成了。</p>
+<h1 id="四、遇到的坑"><a href="#四、遇到的坑" class="headerlink" title="四、遇到的坑"></a>四、遇到的坑</h1><ol>
+<li><p>首先要说的就是配置支持时说到的<code>anko</code>插件，为什么说个人不推荐用呢，是因为我在安装了这个插件，重启AS之后（安装完插件要求重启AS），发现启动失败，报错弹框如下<br><img src="http://upload-images.jianshu.io/upload_images/292429-0ac27f90800a42e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="anko报错弹框.png"><br>google了一下后，说是anko的问题，卸载之后果然启动了，但是具体原理现在还不清楚。如果谁了解这个原因，或者最棒的是知道解决办法，随时欢迎交流指导。</p>
+</li>
+<li><p>添加完依赖进行重新构建的时候，在download环节卡了很久，而且我是翻墙的，后来不想等了，强杀AS后，重新发现build成功。之后又重启过几次，基本卡download和build成功基本一半一半，不知道是我的网络原因还是其他。</p>
+</li>
+</ol>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>刚刚接触kotlin，知道肯定有很多坑要踩，但是不会放弃，踩坑填坑的过程，才是真正进步的过程！同时希望同样在学kotlin的能多多交流，共同进步！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/18/Write and My aims in 2017.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -716,7 +850,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -729,7 +863,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
